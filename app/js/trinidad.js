@@ -1,8 +1,12 @@
 (function(window, $, undefined) {
 
+  // private
   var sunshine = {
     bright: function () {
-      sunshine.previousAndActualSize = [];
+      this.previousAndActualSize = [];
+      this.decreasingSizes = [];
+      this.growingSizes = [];
+      this.standardSizes = [];
 
       $(window).on('resize', this.checkIfGrowingOrDecreasing);
     },
@@ -12,16 +16,19 @@
 
       if (sunshine.previousAndActualSize[1]) {
         if (sunshine.previousAndActualSize[0] > sunshine.previousAndActualSize[1]) {
-          console.log('window size is growing');
+          // screen size is growing
+          $(window).trigger('windowSizeGrow');
         }else{
-          console.log('window size is decreasing');
+          // screen size is decreasing
+          $(window).trigger('windowSizeDecrease');
         }
       }
 
       sunshine.previousAndActualSize[1] = sunshine.previousAndActualSize[0];
     }
-  } // sunset
+  }; // sunset
 
+  // public
   $.trinidad = function (config) {
     $.trinidad.config = $.extend({}, $.trinidad.config, config);
 
@@ -34,12 +41,12 @@
       console.log("My what a sunshine in Trinidad\nHope you're okay light years away\nMy what a heat wave in Trinidad\nHope you don't mind if I stay");
     }
 
-    sunshine.bright();
+    sunshine.bright(); // make Trinidad bright
   }
 
   $.trinidad.config = {
-    quiet: false,
+    quiet: true,
     resolution: {}
-  }
+  };
 
 })(window, jQuery);
