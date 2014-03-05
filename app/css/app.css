@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+English+SC|Pathway+Gothic+One);
+
+body {
+  width: 100%;
+  height: 100%;
+  background: rgb(44, 62, 80);
+}
+
+#whats-happening {
+  color: rgb(149, 165, 166);
+  background: rgb(52, 73, 94);
+  width: 60%;
+  height: 6  5px;
+  margin: 18% auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 4px;
+  border: 4px solid rgb(47, 68, 81);
+}0
+#whats-happening span {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.6em;
+}
+
+#whats-happening h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 2.4em;
+  margin-top: 0;
+}
+
+@media (max-width: 670px) {
+  #whats-happening {
+    height: 145px;
+  }
+}
